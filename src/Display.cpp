@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Display.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pitriche <pitriche@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ydemange <ydemange@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 21:03:42 by pitriche          #+#    #+#             */
-/*   Updated: 2021/09/28 16:43:55 by pitriche         ###   ########.fr       */
+/*   Updated: 2021/10/01 13:12:23 by ydemange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void		Display::update(const Game &game)
 	
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	_draw_floor();
+	// _draw_floor();
 
 	/* camera matrix and look is inverted */
 	inv_pos = {-game.pos[0], -game.pos[1], -game.pos[2]};
@@ -86,12 +86,23 @@ void		Display::update(const Game &game)
 	
 	static float roty = 0;
 	roty += 0.04f;
-	for (const Object &obj : all.game.obj)
+	std::cout << "obj[0]:" << std::endl << all.game.obj[0].model << std::endl;
+	std::cout << "obj[1]:" << std::endl << all.game.obj[1].model << std::endl;
+	std::cout << "obj[2]:" << std::endl << all.game.obj[2].model << std::endl;
+	std::cout << std::endl << std::endl;
+
+	//  std::cout << "obj[0].root_part:"<< all.game.obj[0].root_part << std::endl;
+	//  std::cout << "obj[1].root_part:"<< all.game.obj[1].root_part->root_part << std::endl;
+	// std::cout << "obj[2].root_part:"<< all.game.obj[2].root_part->root_part->root_part << std::endl;
+
+	for (Object &obj : all.game.obj)
 	{
-		Utils::draw_cube(Matrix().scale(obj.dimension)
-			.rotate(obj.angular_position)
-			.translate(obj.position));
+
+		 Utils::draw_cube((obj.GetModel()) * Matrix().scale(obj.dimensions));
 	}
+	// std::cout << std::endl << std::endl;
+	// std::cout << std::endl << std::endl;
+
 	glFinish();
 	SDL_GL_SwapWindow(this->window);
 }

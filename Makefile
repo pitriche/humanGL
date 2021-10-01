@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pitriche <pitriche@student.42.fr>          +#+  +:+       +#+         #
+#    By: ydemange <ydemange@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/02/07 14:21:44 by pitriche          #+#    #+#              #
-#    Updated: 2021/09/28 16:34:54 by pitriche         ###   ########.fr        #
+#    Created: 2021/09/29 12:10:30 by ydemange          #+#    #+#              #
+#    Updated: 2021/09/29 13:14:29 by ydemange         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ CLASSES_HEADERS= $(addsuffix .hpp, $(CLASSES))
 CLASSES_SRCS= $(addsuffix .cpp, $(CLASSES))
 
 HEADERS = $(CLASSES_HEADERS) \
-General.hpp	\
+         General.hpp	\
 
 SRC_FILES = $(CLASSES_SRCS)	\
 main.cpp	\
@@ -50,7 +50,6 @@ ifeq ($(uname), Darwin)
 	CC = clang++
 endif
 
-
 FL_OPTI = -O3 -flto
 FLAGS = -Wall -Wextra -Wconversion -Wunused -std=c++11 $(FL_OPTI) \
 -D 'GL_SILENCE_DEPRECATION'
@@ -60,7 +59,9 @@ FLAGS = -Wall -Wextra -Wconversion -Wunused -std=c++11 $(FL_OPTI) \
 
 CFLAGS = -c $(FLAGS)
 
-FRAMEWORKS = -lSDL2 -LLibrary/lib -ldl -lpthread -framework OpenGL
+SDL_DIR = frameworks
+FRAMEWORKS = -F $(SDL_DIR) -framework SDL2 -Wl,-rpath $(SDL_DIR) -framework OpenGL
+
 
 
 CINCLUDE = -I include -I Library/include/SDL2

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Game.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pitriche <pitriche@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ydemange <ydemange@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 11:14:54 by pitriche          #+#    #+#             */
-/*   Updated: 2021/09/28 16:44:13 by pitriche         ###   ########.fr       */
+/*   Updated: 2021/10/01 14:10:10 by ydemange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,137 @@ Game::~Game(void) { }
 void	Game::init(void)
 {
 	Object	tmp;
+	Object	tmp2;
 
 	/* initial camera position, unlocked */
 	SDL_SetRelativeMouseMode(SDL_TRUE);
 	this->pos[2] = -4.0f;
 	this->pos[1] = 1.0f;
 	this->pos_locked = 8.0f;
+	this->obj.reserve(1000);
 
-	/* objects */
-	tmp.mass = 1;
-	tmp.position = {-1, 0.2f, 0};
-	tmp.velocity = {0, 0, 0};
-	tmp.angular_position = {0, 0, 0};
-	tmp.angular_velocity = {4, 3, 5};
-	tmp.dimension = {1, 1, 1};
+
+	/* obj[0] Tronc*/
+	tmp.model = Matrix();
+	tmp.rotate = Matrix().rotate(0,0,0);
+	tmp.translate = Matrix().translate(0,0,0);
+	tmp.root_part = 0;
+	tmp.dimensions = {1.5,5,1.5};
 	this->obj.push_back(tmp);
 
-	// tmp.position = {1, -1, 0};
-	// tmp.angular_velocity = {0, 0, 1};
+	/* obj[1] tete*/
+	tmp.model = Matrix();
+	tmp.rotate = Matrix().rotate(0,0,0);
+	tmp.translate = Matrix().translate(0,3,0);
+	tmp.root_part = &this->obj[0];
+	tmp.dimensions = {2,2,2};
+	this->obj.push_back(tmp);
+
+	/* obj[2] articulation bras droit*/
+	tmp2.model = Matrix();
+	tmp2.rotate = Matrix().rotate(0,0,0);
+	tmp2.translate = Matrix().translate(1.2,1.5,0);
+	tmp2.root_part = &this->obj[0];
+	tmp2.dimensions = {1,1,1};
+	this->obj.push_back(tmp2);
+
+	/* obj[3] bras droit*/
+	tmp2.model = Matrix();
+	tmp2.rotate = Matrix().rotate(0,0,0);
+	tmp2.translate = Matrix().translate(0,-1,0);
+	tmp2.root_part = &this->obj[2];
+	tmp2.dimensions = {1,2.5,1};
+	this->obj.push_back(tmp2);
+
+	/* obj[4] articulation bras gauche*/
+	tmp2.model = Matrix();
+	tmp2.rotate = Matrix().rotate(1,0,0);
+	tmp2.translate = Matrix().translate(-1.2,1.5,0);
+	tmp2.root_part = &this->obj[0];
+	tmp2.dimensions = {1,1,1};
+	this->obj.push_back(tmp2);
+
+
+	/* obj[5] bras gauche*/
+	tmp2.model = Matrix();
+	tmp2.rotate = Matrix().rotate(0,0,0);
+	tmp2.translate = Matrix().translate(0,-1,0);
+	tmp2.root_part = &this->obj[4];
+	tmp2.dimensions = {1,2.5,1};
+	this->obj.push_back(tmp2);
+
+
+/* obj[6] articulation jambe droit*/
+	tmp2.model = Matrix();
+	tmp2.rotate = Matrix().rotate(-1,0,0);
+	tmp2.translate = Matrix().translate(0.3,-2,0);
+	tmp2.root_part = &this->obj[0];
+	tmp2.dimensions = {1,1,1};
+	this->obj.push_back(tmp2);
+
+	/* obj[7] articulation jambe gauche*/
+	tmp2.model = Matrix();
+	tmp2.rotate = Matrix().rotate(1,0,0);
+	tmp2.translate = Matrix().translate(-0.3,-2,0);
+	tmp2.root_part = &this->obj[0];
+	tmp2.dimensions = {1,1,1};
+	this->obj.push_back(tmp2);
+
+
+	/* obj[8] jambe droit*/
+	tmp2.model = Matrix();
+	tmp2.rotate = Matrix().rotate(0,0,0);
+	tmp2.translate = Matrix().translate(0,-1,0);
+	tmp2.root_part = &this->obj[6];
+	tmp2.dimensions = {1,2.5,1};
+	this->obj.push_back(tmp2);
+
+
+	/* obj[9] jambe gauche*/
+	tmp2.model = Matrix();
+	tmp2.rotate = Matrix().rotate(0,0,0);
+	tmp2.translate = Matrix().translate(0,-1,0);
+	tmp2.root_part = &this->obj[7];
+	tmp2.dimensions = {1,2.5,1};
+	this->obj.push_back(tmp2);
+
+
+
+	// tmp.model = Matrix().translate(-1.8, -2, -2).rotate(2, 0, 0);
+	// tmp.root_part = &this->obj[0];
+	// tmp.dimensions = {1,1,5};
+	// this->obj.push_back(tmp);
+
+
+	// tmp.model = Matrix().translate(10,10,10);//.rotate(1, 0, 0);;
+	// tmp.root_part = &this->obj[1];
+	// tmp.dimensions = {5,10,4};
+
+	// this->obj.push_back(tmp);
+	
+	
+	std::cout << "obj[0]:"<< &this->obj[0] << std::endl;
+	std::cout << "obj[1]:"<< &this->obj[1] << std::endl;
+	std::cout << "obj[2]:"<< &this->obj[2] << std::endl;
+
+
+	// std::cout << "obj[0].root_part:"<< this->obj[0].root_part << std::endl; 
+	// std::cout << "obj[1].root_part:"<< this->obj[1].root_part << std::endl;
+	// std::cout << "obj[2].root_part:"<< this->obj[2].root_part << std::endl;
+
+
+	std::cout << "obj[0].root_part:"<< this->obj[0].root_part << "-->" << "0"<<std::endl; 
+	std::cout << "obj[1].root_part:"<< this->obj[1].root_part << "-->" << &this->obj[0]<<std::endl; 
+	std::cout << "obj[2].root_part:"<< this->obj[2].root_part << "-->" << &this->obj[1] <<std::endl; 
+	/* objects */
+
+
+
+
+	// this->obj.push_back(tmp);
+
+	// tmp.position = {1, 1, 0};
+	// tmp.angular_velocity = {0, 0, 0};
 	// tmp.diameter = 1;
 	// this->obj.push_back(tmp);
 
@@ -118,17 +231,74 @@ void		Game::_update_camera(float delta, const Keys &key)
 void		Game::_update_objects(float delta, const Keys &key)
 {
 	(void)key;
+	static unsigned anim = 0;
+	delta *= this->game_speed;
 
-	for (Object &obj : this->obj)
-	{
-		obj.position[0] += obj.velocity[0] * delta * this->game_speed;
-		obj.position[1] += obj.velocity[1] * delta * this->game_speed;
-		obj.position[2] += obj.velocity[2] * delta * this->game_speed;
-		obj.angular_position[0] += obj.angular_velocity[0] * delta * this->game_speed;
-		obj.angular_position[1] += obj.angular_velocity[1] * delta * this->game_speed;
-		obj.angular_position[2] += obj.angular_velocity[2] * delta * this->game_speed;
-	}
+	// for (Object &obj : this->obj)
+	// {
+	// 	obj.position[0] += obj.velocity[0] * delta;
+	// 	obj.position[1] += obj.velocity[1] * delta;
+	// 	obj.position[2] += obj.velocity[2] * delta;
+	// 	obj.angular_position[0] += obj.angular_velocity[0] * delta;
+	// 	obj.angular_position[1] += obj.angular_velocity[1] * delta;
+	// 	obj.angular_position[2] += obj.angular_velocity[2] * delta;
+	// }
+	
+	
+	
+	
+	 static Matrix mat;
 
+	 mat.rotate(delta , 0, 0);
+		obj[2].rotate = mat * obj[3].rotate;// =obj[1].model.rotate(delta, 0, 0);
+
+ 	
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 // 		//  std::cout << anim << std::endl;
+
+ 	// 	// std::cout << delta << std::endl;
+	
+ 		// if (anim == 0)
+		// {
+ 		// 	// std::cout << obj[1].angular_position[0] << std::endl;
+			
+		// 	obj[1].model.translate(0, 0, 0).rotate(delta, 0, 0);
+		// 	 if (obj[1].angular_position[0] >= 0.5){
+		// 		 anim = 1;
+
+				
+		// 	}
+		// }
+
+		// if (anim == 1)
+		// {
+		
+		// }
+	
+
+	
+
+
+
+// 	for (Object &obj : this->obj)
+// 	{
+// 		if (delta < 0.1)
+// 		{
+
+// 		}
+// 		else{
+
+// //			obj.position[4] -=  delta ;
+// 		}
+
+		
+	// }
 	/* wiggle all */
 	// this->obj[2].position[0] = sinf(all.time.elapsed_frame() / 20.0f) * 4.8f;
 	// this->obj[2].position[2] = cosf(all.time.elapsed_frame() / 20.0f) * 4.8f;

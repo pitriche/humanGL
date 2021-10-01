@@ -1,24 +1,24 @@
 build/SDL_shaders_gl.lo: \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/opengl/SDL_shaders_gl.c \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/opengl/../../SDL_internal.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/opengl/../../dynapi/SDL_dynapi.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/opengl/../../dynapi/SDL_dynapi_overrides.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/opengl/SDL_shaders_gl.c \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/opengl/../../SDL_internal.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/opengl/../../dynapi/SDL_dynapi.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/opengl/../../dynapi/SDL_dynapi_overrides.h \
   include/SDL_config.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_platform.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/begin_code.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/close_code.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_assert.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_config.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_log.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_stdinc.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_opengl.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_opengl_glext.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_video.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_pixels.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_endian.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_rect.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_error.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_rwops.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_surface.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include/SDL_blendmode.h \
-  /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/opengl/SDL_shaders_gl.h
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_platform.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/begin_code.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/close_code.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_assert.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_config.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_log.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_stdinc.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_opengl.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_opengl_glext.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_video.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_pixels.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_endian.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_rect.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_error.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_rwops.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_surface.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/include/SDL_blendmode.h \
+  /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/opengl/SDL_shaders_gl.h

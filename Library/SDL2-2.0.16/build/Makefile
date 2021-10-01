@@ -1,10 +1,10 @@
 # Makefile to build and install the SDL library
 
 top_builddir = .
-srcdir  = /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16
+srcdir  = /Users/ydemange/proj/test/Library/SDL2-2.0.16
 objects = build
 gen = gen
-prefix = /Users/pitriche/ex/ft_newton/Library
+prefix = /Users/ydemange/proj/test/Library
 exec_prefix = ${prefix}
 bindir	= ${exec_prefix}/bin
 libdir  = ${exec_prefix}/lib
@@ -19,9 +19,9 @@ distfile = $(distdir).tar.gz
 
 SHELL	= /bin/sh
 CC      = gcc
-INCLUDE = -Iinclude -I/Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include -idirafter /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/khronos
+INCLUDE = -Iinclude -I/Users/ydemange/proj/test/Library/SDL2-2.0.16/include -idirafter /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/khronos
 CFLAGS  = -g -O3 -DUSING_GENERATED_CONFIG_H
-EXTRA_CFLAGS = -Iinclude -I/Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/include -idirafter /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/khronos  -mmmx -m3dnow -msse -msse2 -msse3 -Wall -fno-strict-aliasing -DTARGET_API_MAC_CARBON -DTARGET_API_MAC_OSX -fvisibility=hidden -Wdeclaration-after-statement -Werror=declaration-after-statement -DMESA_EGL_NO_X11_HEADERS -DEGL_NO_X11 -D_THREAD_SAFE -I/Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/hidapi/hidapi
+EXTRA_CFLAGS = -Iinclude -I/Users/ydemange/proj/test/Library/SDL2-2.0.16/include -idirafter /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/khronos  -mmmx -m3dnow -msse -msse2 -msse3 -Wall -fno-strict-aliasing -DTARGET_API_MAC_CARBON -DTARGET_API_MAC_OSX -fvisibility=hidden -Wdeclaration-after-statement -Werror=declaration-after-statement  -I/opt/X11/include -D_THREAD_SAFE -I/Users/ydemange/proj/test/Library/SDL2-2.0.16/src/hidapi/hidapi
 LDFLAGS = 
 EXTRA_LDFLAGS =  -lm -liconv  -Wl,-framework,CoreAudio -Wl,-framework,AudioToolbox -Wl,-framework,ForceFeedback -lobjc -Wl,-framework,CoreVideo -Wl,-framework,Cocoa -Wl,-framework,Carbon -Wl,-framework,IOKit -Wl,-weak_framework,QuartzCore -Wl,-weak_framework,Metal
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
@@ -33,7 +33,7 @@ LINKER = $(CC)
 LIBTOOLLINKERTAG = CC
 
 TARGET  = libSDL2.la
-OBJECTS = $(objects)/SDL.lo $(objects)/SDL_assert.lo $(objects)/SDL_dataqueue.lo $(objects)/SDL_error.lo $(objects)/SDL_hints.lo $(objects)/SDL_log.lo $(objects)/SDL_atomic.lo $(objects)/SDL_spinlock.lo $(objects)/SDL_audio.lo $(objects)/SDL_audiocvt.lo $(objects)/SDL_audiodev.lo $(objects)/SDL_audiotypecvt.lo $(objects)/SDL_mixer.lo $(objects)/SDL_wave.lo $(objects)/SDL_cpuinfo.lo $(objects)/SDL_dynapi.lo $(objects)/SDL_clipboardevents.lo $(objects)/SDL_displayevents.lo $(objects)/SDL_dropevents.lo $(objects)/SDL_events.lo $(objects)/SDL_gesture.lo $(objects)/SDL_keyboard.lo $(objects)/SDL_mouse.lo $(objects)/SDL_quit.lo $(objects)/SDL_touch.lo $(objects)/SDL_windowevents.lo $(objects)/SDL_rwops.lo $(objects)/SDL_haptic.lo $(objects)/SDL_gamecontroller.lo $(objects)/SDL_joystick.lo $(objects)/e_atan2.lo $(objects)/e_exp.lo $(objects)/e_fmod.lo $(objects)/e_log.lo $(objects)/e_log10.lo $(objects)/e_pow.lo $(objects)/e_rem_pio2.lo $(objects)/e_sqrt.lo $(objects)/k_cos.lo $(objects)/k_rem_pio2.lo $(objects)/k_sin.lo $(objects)/k_tan.lo $(objects)/s_atan.lo $(objects)/s_copysign.lo $(objects)/s_cos.lo $(objects)/s_fabs.lo $(objects)/s_floor.lo $(objects)/s_scalbn.lo $(objects)/s_sin.lo $(objects)/s_tan.lo $(objects)/SDL_url.lo $(objects)/SDL_power.lo $(objects)/SDL_d3dmath.lo $(objects)/SDL_render.lo $(objects)/SDL_yuv_sw.lo $(objects)/SDL_render_d3d.lo $(objects)/SDL_shaders_d3d.lo $(objects)/SDL_render_d3d11.lo $(objects)/SDL_shaders_d3d11.lo $(objects)/SDL_render_gl.lo $(objects)/SDL_shaders_gl.lo $(objects)/SDL_render_gles.lo $(objects)/SDL_render_gles2.lo $(objects)/SDL_shaders_gles2.lo $(objects)/SDL_render_psp.lo $(objects)/SDL_blendfillrect.lo $(objects)/SDL_blendline.lo $(objects)/SDL_blendpoint.lo $(objects)/SDL_drawline.lo $(objects)/SDL_drawpoint.lo $(objects)/SDL_render_sw.lo $(objects)/SDL_rotate.lo $(objects)/SDL_render_vita_gxm.lo $(objects)/SDL_render_vita_gxm_memory.lo $(objects)/SDL_render_vita_gxm_tools.lo $(objects)/SDL_sensor.lo $(objects)/SDL_crc32.lo $(objects)/SDL_getenv.lo $(objects)/SDL_iconv.lo $(objects)/SDL_malloc.lo $(objects)/SDL_qsort.lo $(objects)/SDL_stdlib.lo $(objects)/SDL_string.lo $(objects)/SDL_strtokr.lo $(objects)/SDL_thread.lo $(objects)/SDL_timer.lo $(objects)/SDL_RLEaccel.lo $(objects)/SDL_blit.lo $(objects)/SDL_blit_0.lo $(objects)/SDL_blit_1.lo $(objects)/SDL_blit_A.lo $(objects)/SDL_blit_N.lo $(objects)/SDL_blit_auto.lo $(objects)/SDL_blit_copy.lo $(objects)/SDL_blit_slow.lo $(objects)/SDL_bmp.lo $(objects)/SDL_clipboard.lo $(objects)/SDL_egl.lo $(objects)/SDL_fillrect.lo $(objects)/SDL_pixels.lo $(objects)/SDL_rect.lo $(objects)/SDL_shape.lo $(objects)/SDL_stretch.lo $(objects)/SDL_surface.lo $(objects)/SDL_video.lo $(objects)/SDL_vulkan_utils.lo $(objects)/SDL_yuv.lo $(objects)/yuv_rgb.lo $(objects)/SDL_locale.lo $(objects)/SDL_nullevents.lo $(objects)/SDL_nullframebuffer.lo $(objects)/SDL_nullvideo.lo $(objects)/SDL_diskaudio.lo $(objects)/SDL_dummyaudio.lo $(objects)/SDL_sysloadso.lo $(objects)/SDL_cocoaclipboard.lo $(objects)/SDL_cocoaevents.lo $(objects)/SDL_cocoakeyboard.lo $(objects)/SDL_cocoamessagebox.lo $(objects)/SDL_cocoametalview.lo $(objects)/SDL_cocoamodes.lo $(objects)/SDL_cocoamouse.lo $(objects)/SDL_cocoaopengl.lo $(objects)/SDL_cocoaopengles.lo $(objects)/SDL_cocoashape.lo $(objects)/SDL_cocoavideo.lo $(objects)/SDL_cocoavulkan.lo $(objects)/SDL_cocoawindow.lo $(objects)/SDL_render_metal.lo $(objects)/SDL_systhread.lo $(objects)/SDL_syssem.lo $(objects)/SDL_sysmutex.lo $(objects)/SDL_syscond.lo $(objects)/SDL_systls.lo $(objects)/SDL_hidapi_gamecube.lo $(objects)/SDL_hidapi_luna.lo $(objects)/SDL_hidapi_ps4.lo $(objects)/SDL_hidapi_ps5.lo $(objects)/SDL_hidapi_rumble.lo $(objects)/SDL_hidapi_stadia.lo $(objects)/SDL_hidapi_steam.lo $(objects)/SDL_hidapi_switch.lo $(objects)/SDL_hidapi_xbox360.lo $(objects)/SDL_hidapi_xbox360w.lo $(objects)/SDL_hidapi_xboxone.lo $(objects)/SDL_hidapijoystick.lo $(objects)/SDL_hidapi.lo $(objects)/SDL_sysurl.lo $(objects)/SDL_syslocale.lo $(objects)/SDL_coreaudio.lo $(objects)/SDL_iokitjoystick.lo $(objects)/SDL_mfijoystick.lo $(objects)/SDL_syshaptic.lo $(objects)/SDL_syspower.lo $(objects)/SDL_sysfilesystem.lo $(objects)/SDL_systimer.lo $(objects)/SDL_rwopsbundlesupport.lo $(objects)/SDL_poll.lo $(objects)/SDL_virtualjoystick.lo $(objects)/SDL_dummysensor.lo
+OBJECTS = $(objects)/SDL.lo $(objects)/SDL_assert.lo $(objects)/SDL_dataqueue.lo $(objects)/SDL_error.lo $(objects)/SDL_hints.lo $(objects)/SDL_log.lo $(objects)/SDL_atomic.lo $(objects)/SDL_spinlock.lo $(objects)/SDL_audio.lo $(objects)/SDL_audiocvt.lo $(objects)/SDL_audiodev.lo $(objects)/SDL_audiotypecvt.lo $(objects)/SDL_mixer.lo $(objects)/SDL_wave.lo $(objects)/SDL_cpuinfo.lo $(objects)/SDL_dynapi.lo $(objects)/SDL_clipboardevents.lo $(objects)/SDL_displayevents.lo $(objects)/SDL_dropevents.lo $(objects)/SDL_events.lo $(objects)/SDL_gesture.lo $(objects)/SDL_keyboard.lo $(objects)/SDL_mouse.lo $(objects)/SDL_quit.lo $(objects)/SDL_touch.lo $(objects)/SDL_windowevents.lo $(objects)/SDL_rwops.lo $(objects)/SDL_haptic.lo $(objects)/SDL_gamecontroller.lo $(objects)/SDL_joystick.lo $(objects)/e_atan2.lo $(objects)/e_exp.lo $(objects)/e_fmod.lo $(objects)/e_log.lo $(objects)/e_log10.lo $(objects)/e_pow.lo $(objects)/e_rem_pio2.lo $(objects)/e_sqrt.lo $(objects)/k_cos.lo $(objects)/k_rem_pio2.lo $(objects)/k_sin.lo $(objects)/k_tan.lo $(objects)/s_atan.lo $(objects)/s_copysign.lo $(objects)/s_cos.lo $(objects)/s_fabs.lo $(objects)/s_floor.lo $(objects)/s_scalbn.lo $(objects)/s_sin.lo $(objects)/s_tan.lo $(objects)/SDL_url.lo $(objects)/SDL_power.lo $(objects)/SDL_d3dmath.lo $(objects)/SDL_render.lo $(objects)/SDL_yuv_sw.lo $(objects)/SDL_render_d3d.lo $(objects)/SDL_shaders_d3d.lo $(objects)/SDL_render_d3d11.lo $(objects)/SDL_shaders_d3d11.lo $(objects)/SDL_render_gl.lo $(objects)/SDL_shaders_gl.lo $(objects)/SDL_render_gles.lo $(objects)/SDL_render_gles2.lo $(objects)/SDL_shaders_gles2.lo $(objects)/SDL_render_psp.lo $(objects)/SDL_blendfillrect.lo $(objects)/SDL_blendline.lo $(objects)/SDL_blendpoint.lo $(objects)/SDL_drawline.lo $(objects)/SDL_drawpoint.lo $(objects)/SDL_render_sw.lo $(objects)/SDL_rotate.lo $(objects)/SDL_render_vita_gxm.lo $(objects)/SDL_render_vita_gxm_memory.lo $(objects)/SDL_render_vita_gxm_tools.lo $(objects)/SDL_sensor.lo $(objects)/SDL_crc32.lo $(objects)/SDL_getenv.lo $(objects)/SDL_iconv.lo $(objects)/SDL_malloc.lo $(objects)/SDL_qsort.lo $(objects)/SDL_stdlib.lo $(objects)/SDL_string.lo $(objects)/SDL_strtokr.lo $(objects)/SDL_thread.lo $(objects)/SDL_timer.lo $(objects)/SDL_RLEaccel.lo $(objects)/SDL_blit.lo $(objects)/SDL_blit_0.lo $(objects)/SDL_blit_1.lo $(objects)/SDL_blit_A.lo $(objects)/SDL_blit_N.lo $(objects)/SDL_blit_auto.lo $(objects)/SDL_blit_copy.lo $(objects)/SDL_blit_slow.lo $(objects)/SDL_bmp.lo $(objects)/SDL_clipboard.lo $(objects)/SDL_egl.lo $(objects)/SDL_fillrect.lo $(objects)/SDL_pixels.lo $(objects)/SDL_rect.lo $(objects)/SDL_shape.lo $(objects)/SDL_stretch.lo $(objects)/SDL_surface.lo $(objects)/SDL_video.lo $(objects)/SDL_vulkan_utils.lo $(objects)/SDL_yuv.lo $(objects)/yuv_rgb.lo $(objects)/SDL_locale.lo $(objects)/SDL_nullevents.lo $(objects)/SDL_nullframebuffer.lo $(objects)/SDL_nullvideo.lo $(objects)/SDL_diskaudio.lo $(objects)/SDL_dummyaudio.lo $(objects)/SDL_sysloadso.lo $(objects)/SDL_cocoaclipboard.lo $(objects)/SDL_cocoaevents.lo $(objects)/SDL_cocoakeyboard.lo $(objects)/SDL_cocoamessagebox.lo $(objects)/SDL_cocoametalview.lo $(objects)/SDL_cocoamodes.lo $(objects)/SDL_cocoamouse.lo $(objects)/SDL_cocoaopengl.lo $(objects)/SDL_cocoaopengles.lo $(objects)/SDL_cocoashape.lo $(objects)/SDL_cocoavideo.lo $(objects)/SDL_cocoavulkan.lo $(objects)/SDL_cocoawindow.lo $(objects)/SDL_render_metal.lo $(objects)/SDL_x11clipboard.lo $(objects)/SDL_x11dyn.lo $(objects)/SDL_x11events.lo $(objects)/SDL_x11framebuffer.lo $(objects)/SDL_x11keyboard.lo $(objects)/SDL_x11messagebox.lo $(objects)/SDL_x11modes.lo $(objects)/SDL_x11mouse.lo $(objects)/SDL_x11opengl.lo $(objects)/SDL_x11opengles.lo $(objects)/SDL_x11shape.lo $(objects)/SDL_x11touch.lo $(objects)/SDL_x11video.lo $(objects)/SDL_x11vulkan.lo $(objects)/SDL_x11window.lo $(objects)/SDL_x11xinput2.lo $(objects)/edid-parse.lo $(objects)/imKStoUCS.lo $(objects)/SDL_systhread.lo $(objects)/SDL_syssem.lo $(objects)/SDL_sysmutex.lo $(objects)/SDL_syscond.lo $(objects)/SDL_systls.lo $(objects)/SDL_hidapi_gamecube.lo $(objects)/SDL_hidapi_luna.lo $(objects)/SDL_hidapi_ps4.lo $(objects)/SDL_hidapi_ps5.lo $(objects)/SDL_hidapi_rumble.lo $(objects)/SDL_hidapi_stadia.lo $(objects)/SDL_hidapi_steam.lo $(objects)/SDL_hidapi_switch.lo $(objects)/SDL_hidapi_xbox360.lo $(objects)/SDL_hidapi_xbox360w.lo $(objects)/SDL_hidapi_xboxone.lo $(objects)/SDL_hidapijoystick.lo $(objects)/SDL_hidapi.lo $(objects)/SDL_sysurl.lo $(objects)/SDL_syslocale.lo $(objects)/SDL_coreaudio.lo $(objects)/SDL_iokitjoystick.lo $(objects)/SDL_mfijoystick.lo $(objects)/SDL_syshaptic.lo $(objects)/SDL_syspower.lo $(objects)/SDL_sysfilesystem.lo $(objects)/SDL_systimer.lo $(objects)/SDL_rwopsbundlesupport.lo $(objects)/SDL_poll.lo $(objects)/SDL_virtualjoystick.lo $(objects)/SDL_dummysensor.lo
 GEN_HEADERS = 
 GEN_OBJECTS = 
 VERSION_OBJECTS = 
@@ -260,522 +260,576 @@ rpm: $(distfile)
 -include $(OBJECTS:.lo=.d)
 
 # Special dependency for SDL.c, since it depends on SDL_revision.h
-/Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/SDL.c: update-revision
+/Users/ydemange/proj/test/Library/SDL2-2.0.16/src/SDL.c: update-revision
 
-$(objects)/SDL.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/SDL.c $(objects)/.created
+$(objects)/SDL.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/SDL.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_assert.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/SDL_assert.c $(objects)/.created
+$(objects)/SDL_assert.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/SDL_assert.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_dataqueue.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/SDL_dataqueue.c $(objects)/.created
+$(objects)/SDL_dataqueue.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/SDL_dataqueue.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_error.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/SDL_error.c $(objects)/.created
+$(objects)/SDL_error.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/SDL_error.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hints.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/SDL_hints.c $(objects)/.created
+$(objects)/SDL_hints.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/SDL_hints.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_log.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/SDL_log.c $(objects)/.created
+$(objects)/SDL_log.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/SDL_log.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_atomic.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/atomic/SDL_atomic.c $(objects)/.created
+$(objects)/SDL_atomic.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/atomic/SDL_atomic.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_spinlock.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/atomic/SDL_spinlock.c $(objects)/.created
+$(objects)/SDL_spinlock.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/atomic/SDL_spinlock.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_audio.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/audio/SDL_audio.c $(objects)/.created
+$(objects)/SDL_audio.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/audio/SDL_audio.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_audiocvt.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/audio/SDL_audiocvt.c $(objects)/.created
+$(objects)/SDL_audiocvt.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/audio/SDL_audiocvt.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_audiodev.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/audio/SDL_audiodev.c $(objects)/.created
+$(objects)/SDL_audiodev.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/audio/SDL_audiodev.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_audiotypecvt.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/audio/SDL_audiotypecvt.c $(objects)/.created
+$(objects)/SDL_audiotypecvt.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/audio/SDL_audiotypecvt.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_mixer.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/audio/SDL_mixer.c $(objects)/.created
+$(objects)/SDL_mixer.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/audio/SDL_mixer.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_wave.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/audio/SDL_wave.c $(objects)/.created
+$(objects)/SDL_wave.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/audio/SDL_wave.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cpuinfo.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/cpuinfo/SDL_cpuinfo.c $(objects)/.created
+$(objects)/SDL_cpuinfo.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/cpuinfo/SDL_cpuinfo.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_dynapi.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/dynapi/SDL_dynapi.c $(objects)/.created
+$(objects)/SDL_dynapi.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/dynapi/SDL_dynapi.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_clipboardevents.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/events/SDL_clipboardevents.c $(objects)/.created
+$(objects)/SDL_clipboardevents.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/events/SDL_clipboardevents.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_displayevents.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/events/SDL_displayevents.c $(objects)/.created
+$(objects)/SDL_displayevents.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/events/SDL_displayevents.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_dropevents.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/events/SDL_dropevents.c $(objects)/.created
+$(objects)/SDL_dropevents.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/events/SDL_dropevents.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_events.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/events/SDL_events.c $(objects)/.created
+$(objects)/SDL_events.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/events/SDL_events.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_gesture.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/events/SDL_gesture.c $(objects)/.created
+$(objects)/SDL_gesture.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/events/SDL_gesture.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_keyboard.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/events/SDL_keyboard.c $(objects)/.created
+$(objects)/SDL_keyboard.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/events/SDL_keyboard.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_mouse.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/events/SDL_mouse.c $(objects)/.created
+$(objects)/SDL_mouse.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/events/SDL_mouse.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_quit.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/events/SDL_quit.c $(objects)/.created
+$(objects)/SDL_quit.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/events/SDL_quit.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_touch.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/events/SDL_touch.c $(objects)/.created
+$(objects)/SDL_touch.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/events/SDL_touch.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_windowevents.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/events/SDL_windowevents.c $(objects)/.created
+$(objects)/SDL_windowevents.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/events/SDL_windowevents.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_rwops.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/file/SDL_rwops.c $(objects)/.created
+$(objects)/SDL_rwops.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/file/SDL_rwops.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_haptic.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/haptic/SDL_haptic.c $(objects)/.created
+$(objects)/SDL_haptic.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/haptic/SDL_haptic.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_gamecontroller.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/SDL_gamecontroller.c $(objects)/.created
+$(objects)/SDL_gamecontroller.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/SDL_gamecontroller.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_joystick.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/SDL_joystick.c $(objects)/.created
+$(objects)/SDL_joystick.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/SDL_joystick.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/e_atan2.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/e_atan2.c $(objects)/.created
+$(objects)/e_atan2.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/e_atan2.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/e_exp.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/e_exp.c $(objects)/.created
+$(objects)/e_exp.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/e_exp.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/e_fmod.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/e_fmod.c $(objects)/.created
+$(objects)/e_fmod.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/e_fmod.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/e_log.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/e_log.c $(objects)/.created
+$(objects)/e_log.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/e_log.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/e_log10.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/e_log10.c $(objects)/.created
+$(objects)/e_log10.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/e_log10.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/e_pow.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/e_pow.c $(objects)/.created
+$(objects)/e_pow.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/e_pow.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/e_rem_pio2.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/e_rem_pio2.c $(objects)/.created
+$(objects)/e_rem_pio2.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/e_rem_pio2.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/e_sqrt.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/e_sqrt.c $(objects)/.created
+$(objects)/e_sqrt.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/e_sqrt.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/k_cos.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/k_cos.c $(objects)/.created
+$(objects)/k_cos.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/k_cos.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/k_rem_pio2.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/k_rem_pio2.c $(objects)/.created
+$(objects)/k_rem_pio2.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/k_rem_pio2.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/k_sin.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/k_sin.c $(objects)/.created
+$(objects)/k_sin.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/k_sin.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/k_tan.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/k_tan.c $(objects)/.created
+$(objects)/k_tan.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/k_tan.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/s_atan.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/s_atan.c $(objects)/.created
+$(objects)/s_atan.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/s_atan.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/s_copysign.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/s_copysign.c $(objects)/.created
+$(objects)/s_copysign.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/s_copysign.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/s_cos.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/s_cos.c $(objects)/.created
+$(objects)/s_cos.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/s_cos.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/s_fabs.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/s_fabs.c $(objects)/.created
+$(objects)/s_fabs.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/s_fabs.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/s_floor.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/s_floor.c $(objects)/.created
+$(objects)/s_floor.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/s_floor.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/s_scalbn.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/s_scalbn.c $(objects)/.created
+$(objects)/s_scalbn.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/s_scalbn.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/s_sin.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/s_sin.c $(objects)/.created
+$(objects)/s_sin.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/s_sin.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/s_tan.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/libm/s_tan.c $(objects)/.created
+$(objects)/s_tan.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/libm/s_tan.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_url.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/misc/SDL_url.c $(objects)/.created
+$(objects)/SDL_url.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/misc/SDL_url.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_power.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/power/SDL_power.c $(objects)/.created
+$(objects)/SDL_power.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/power/SDL_power.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_d3dmath.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/SDL_d3dmath.c $(objects)/.created
+$(objects)/SDL_d3dmath.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/SDL_d3dmath.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_render.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/SDL_render.c $(objects)/.created
+$(objects)/SDL_render.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/SDL_render.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_yuv_sw.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/SDL_yuv_sw.c $(objects)/.created
+$(objects)/SDL_yuv_sw.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/SDL_yuv_sw.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_render_d3d.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/direct3d/SDL_render_d3d.c $(objects)/.created
+$(objects)/SDL_render_d3d.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/direct3d/SDL_render_d3d.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_shaders_d3d.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/direct3d/SDL_shaders_d3d.c $(objects)/.created
+$(objects)/SDL_shaders_d3d.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/direct3d/SDL_shaders_d3d.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_render_d3d11.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/direct3d11/SDL_render_d3d11.c $(objects)/.created
+$(objects)/SDL_render_d3d11.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/direct3d11/SDL_render_d3d11.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_shaders_d3d11.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/direct3d11/SDL_shaders_d3d11.c $(objects)/.created
+$(objects)/SDL_shaders_d3d11.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/direct3d11/SDL_shaders_d3d11.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_render_gl.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/opengl/SDL_render_gl.c $(objects)/.created
+$(objects)/SDL_render_gl.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/opengl/SDL_render_gl.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_shaders_gl.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/opengl/SDL_shaders_gl.c $(objects)/.created
+$(objects)/SDL_shaders_gl.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/opengl/SDL_shaders_gl.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_render_gles.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/opengles/SDL_render_gles.c $(objects)/.created
+$(objects)/SDL_render_gles.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/opengles/SDL_render_gles.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_render_gles2.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/opengles2/SDL_render_gles2.c $(objects)/.created
+$(objects)/SDL_render_gles2.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/opengles2/SDL_render_gles2.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_shaders_gles2.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/opengles2/SDL_shaders_gles2.c $(objects)/.created
+$(objects)/SDL_shaders_gles2.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/opengles2/SDL_shaders_gles2.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_render_psp.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/psp/SDL_render_psp.c $(objects)/.created
+$(objects)/SDL_render_psp.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/psp/SDL_render_psp.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_blendfillrect.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/software/SDL_blendfillrect.c $(objects)/.created
+$(objects)/SDL_blendfillrect.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/software/SDL_blendfillrect.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_blendline.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/software/SDL_blendline.c $(objects)/.created
+$(objects)/SDL_blendline.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/software/SDL_blendline.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_blendpoint.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/software/SDL_blendpoint.c $(objects)/.created
+$(objects)/SDL_blendpoint.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/software/SDL_blendpoint.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_drawline.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/software/SDL_drawline.c $(objects)/.created
+$(objects)/SDL_drawline.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/software/SDL_drawline.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_drawpoint.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/software/SDL_drawpoint.c $(objects)/.created
+$(objects)/SDL_drawpoint.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/software/SDL_drawpoint.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_render_sw.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/software/SDL_render_sw.c $(objects)/.created
+$(objects)/SDL_render_sw.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/software/SDL_render_sw.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_rotate.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/software/SDL_rotate.c $(objects)/.created
+$(objects)/SDL_rotate.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/software/SDL_rotate.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_render_vita_gxm.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/vitagxm/SDL_render_vita_gxm.c $(objects)/.created
+$(objects)/SDL_render_vita_gxm.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/vitagxm/SDL_render_vita_gxm.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_render_vita_gxm_memory.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/vitagxm/SDL_render_vita_gxm_memory.c $(objects)/.created
+$(objects)/SDL_render_vita_gxm_memory.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/vitagxm/SDL_render_vita_gxm_memory.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_render_vita_gxm_tools.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/vitagxm/SDL_render_vita_gxm_tools.c $(objects)/.created
+$(objects)/SDL_render_vita_gxm_tools.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/vitagxm/SDL_render_vita_gxm_tools.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_sensor.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/sensor/SDL_sensor.c $(objects)/.created
+$(objects)/SDL_sensor.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/sensor/SDL_sensor.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_crc32.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/stdlib/SDL_crc32.c $(objects)/.created
+$(objects)/SDL_crc32.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/stdlib/SDL_crc32.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_getenv.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/stdlib/SDL_getenv.c $(objects)/.created
+$(objects)/SDL_getenv.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/stdlib/SDL_getenv.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_iconv.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/stdlib/SDL_iconv.c $(objects)/.created
+$(objects)/SDL_iconv.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/stdlib/SDL_iconv.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_malloc.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/stdlib/SDL_malloc.c $(objects)/.created
+$(objects)/SDL_malloc.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/stdlib/SDL_malloc.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_qsort.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/stdlib/SDL_qsort.c $(objects)/.created
+$(objects)/SDL_qsort.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/stdlib/SDL_qsort.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_stdlib.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/stdlib/SDL_stdlib.c $(objects)/.created
+$(objects)/SDL_stdlib.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/stdlib/SDL_stdlib.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_string.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/stdlib/SDL_string.c $(objects)/.created
+$(objects)/SDL_string.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/stdlib/SDL_string.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_strtokr.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/stdlib/SDL_strtokr.c $(objects)/.created
+$(objects)/SDL_strtokr.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/stdlib/SDL_strtokr.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_thread.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/thread/SDL_thread.c $(objects)/.created
+$(objects)/SDL_thread.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/thread/SDL_thread.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_timer.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/timer/SDL_timer.c $(objects)/.created
+$(objects)/SDL_timer.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/timer/SDL_timer.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_RLEaccel.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_RLEaccel.c $(objects)/.created
+$(objects)/SDL_RLEaccel.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_RLEaccel.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_blit.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_blit.c $(objects)/.created
+$(objects)/SDL_blit.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_blit.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_blit_0.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_blit_0.c $(objects)/.created
+$(objects)/SDL_blit_0.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_blit_0.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_blit_1.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_blit_1.c $(objects)/.created
+$(objects)/SDL_blit_1.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_blit_1.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_blit_A.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_blit_A.c $(objects)/.created
+$(objects)/SDL_blit_A.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_blit_A.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_blit_N.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_blit_N.c $(objects)/.created
+$(objects)/SDL_blit_N.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_blit_N.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_blit_auto.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_blit_auto.c $(objects)/.created
+$(objects)/SDL_blit_auto.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_blit_auto.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_blit_copy.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_blit_copy.c $(objects)/.created
+$(objects)/SDL_blit_copy.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_blit_copy.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_blit_slow.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_blit_slow.c $(objects)/.created
+$(objects)/SDL_blit_slow.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_blit_slow.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_bmp.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_bmp.c $(objects)/.created
+$(objects)/SDL_bmp.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_bmp.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_clipboard.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_clipboard.c $(objects)/.created
+$(objects)/SDL_clipboard.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_clipboard.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_egl.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_egl.c $(objects)/.created
+$(objects)/SDL_egl.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_egl.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_fillrect.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_fillrect.c $(objects)/.created
+$(objects)/SDL_fillrect.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_fillrect.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_pixels.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_pixels.c $(objects)/.created
+$(objects)/SDL_pixels.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_pixels.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_rect.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_rect.c $(objects)/.created
+$(objects)/SDL_rect.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_rect.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_shape.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_shape.c $(objects)/.created
+$(objects)/SDL_shape.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_shape.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_stretch.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_stretch.c $(objects)/.created
+$(objects)/SDL_stretch.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_stretch.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_surface.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_surface.c $(objects)/.created
+$(objects)/SDL_surface.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_surface.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_video.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_video.c $(objects)/.created
+$(objects)/SDL_video.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_video.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_vulkan_utils.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_vulkan_utils.c $(objects)/.created
+$(objects)/SDL_vulkan_utils.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_vulkan_utils.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_yuv.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/SDL_yuv.c $(objects)/.created
+$(objects)/SDL_yuv.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/SDL_yuv.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/yuv_rgb.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/yuv2rgb/yuv_rgb.c $(objects)/.created
+$(objects)/yuv_rgb.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/yuv2rgb/yuv_rgb.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_locale.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/locale/SDL_locale.c $(objects)/.created
+$(objects)/SDL_locale.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/locale/SDL_locale.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_nullevents.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/dummy/SDL_nullevents.c $(objects)/.created
+$(objects)/SDL_nullevents.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/dummy/SDL_nullevents.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_nullframebuffer.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/dummy/SDL_nullframebuffer.c $(objects)/.created
+$(objects)/SDL_nullframebuffer.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/dummy/SDL_nullframebuffer.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_nullvideo.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/dummy/SDL_nullvideo.c $(objects)/.created
+$(objects)/SDL_nullvideo.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/dummy/SDL_nullvideo.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_diskaudio.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/audio/disk/SDL_diskaudio.c $(objects)/.created
+$(objects)/SDL_diskaudio.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/audio/disk/SDL_diskaudio.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_dummyaudio.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/audio/dummy/SDL_dummyaudio.c $(objects)/.created
+$(objects)/SDL_dummyaudio.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/audio/dummy/SDL_dummyaudio.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_sysloadso.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/loadso/dlopen/SDL_sysloadso.c $(objects)/.created
+$(objects)/SDL_sysloadso.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/loadso/dlopen/SDL_sysloadso.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cocoaclipboard.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoaclipboard.m $(objects)/.created
+$(objects)/SDL_cocoaclipboard.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoaclipboard.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cocoaevents.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoaevents.m $(objects)/.created
+$(objects)/SDL_cocoaevents.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoaevents.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cocoakeyboard.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoakeyboard.m $(objects)/.created
+$(objects)/SDL_cocoakeyboard.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoakeyboard.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cocoamessagebox.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoamessagebox.m $(objects)/.created
+$(objects)/SDL_cocoamessagebox.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoamessagebox.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cocoametalview.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoametalview.m $(objects)/.created
+$(objects)/SDL_cocoametalview.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoametalview.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cocoamodes.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoamodes.m $(objects)/.created
+$(objects)/SDL_cocoamodes.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoamodes.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cocoamouse.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoamouse.m $(objects)/.created
+$(objects)/SDL_cocoamouse.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoamouse.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cocoaopengl.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoaopengl.m $(objects)/.created
+$(objects)/SDL_cocoaopengl.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoaopengl.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cocoaopengles.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoaopengles.m $(objects)/.created
+$(objects)/SDL_cocoaopengles.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoaopengles.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cocoashape.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoashape.m $(objects)/.created
+$(objects)/SDL_cocoashape.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoashape.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cocoavideo.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoavideo.m $(objects)/.created
+$(objects)/SDL_cocoavideo.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoavideo.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cocoavulkan.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoavulkan.m $(objects)/.created
+$(objects)/SDL_cocoavulkan.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoavulkan.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_cocoawindow.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoawindow.m $(objects)/.created
+$(objects)/SDL_cocoawindow.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/cocoa/SDL_cocoawindow.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_render_metal.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/render/metal/SDL_render_metal.m $(objects)/.created
+$(objects)/SDL_render_metal.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/render/metal/SDL_render_metal.m $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_systhread.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/thread/pthread/SDL_systhread.c $(objects)/.created
+$(objects)/SDL_x11clipboard.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11clipboard.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_syssem.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/thread/pthread/SDL_syssem.c $(objects)/.created
+$(objects)/SDL_x11dyn.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11dyn.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_sysmutex.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/thread/pthread/SDL_sysmutex.c $(objects)/.created
+$(objects)/SDL_x11events.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11events.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_syscond.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/thread/pthread/SDL_syscond.c $(objects)/.created
+$(objects)/SDL_x11framebuffer.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11framebuffer.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_systls.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/thread/pthread/SDL_systls.c $(objects)/.created
+$(objects)/SDL_x11keyboard.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11keyboard.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hidapi_gamecube.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_gamecube.c $(objects)/.created
+$(objects)/SDL_x11messagebox.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11messagebox.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hidapi_luna.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_luna.c $(objects)/.created
+$(objects)/SDL_x11modes.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11modes.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hidapi_ps4.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_ps4.c $(objects)/.created
+$(objects)/SDL_x11mouse.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11mouse.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hidapi_ps5.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_ps5.c $(objects)/.created
+$(objects)/SDL_x11opengl.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11opengl.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hidapi_rumble.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_rumble.c $(objects)/.created
+$(objects)/SDL_x11opengles.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11opengles.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hidapi_stadia.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_stadia.c $(objects)/.created
+$(objects)/SDL_x11shape.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11shape.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hidapi_steam.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_steam.c $(objects)/.created
+$(objects)/SDL_x11touch.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11touch.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hidapi_switch.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_switch.c $(objects)/.created
+$(objects)/SDL_x11video.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11video.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hidapi_xbox360.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_xbox360.c $(objects)/.created
+$(objects)/SDL_x11vulkan.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11vulkan.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hidapi_xbox360w.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_xbox360w.c $(objects)/.created
+$(objects)/SDL_x11window.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11window.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hidapi_xboxone.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_xboxone.c $(objects)/.created
+$(objects)/SDL_x11xinput2.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/SDL_x11xinput2.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hidapijoystick.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapijoystick.c $(objects)/.created
+$(objects)/edid-parse.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/edid-parse.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_hidapi.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/hidapi/SDL_hidapi.c $(objects)/.created
+$(objects)/imKStoUCS.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/video/x11/imKStoUCS.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_sysurl.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/misc/macosx/SDL_sysurl.m $(objects)/.created
+$(objects)/SDL_systhread.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/thread/pthread/SDL_systhread.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_syslocale.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/locale/macosx/SDL_syslocale.m $(objects)/.created
+$(objects)/SDL_syssem.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/thread/pthread/SDL_syssem.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_coreaudio.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/audio/coreaudio/SDL_coreaudio.m $(objects)/.created
+$(objects)/SDL_sysmutex.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/thread/pthread/SDL_sysmutex.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_iokitjoystick.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/darwin/SDL_iokitjoystick.c $(objects)/.created
+$(objects)/SDL_syscond.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/thread/pthread/SDL_syscond.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_mfijoystick.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/iphoneos/SDL_mfijoystick.m $(objects)/.created
+$(objects)/SDL_systls.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/thread/pthread/SDL_systls.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_syshaptic.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/haptic/darwin/SDL_syshaptic.c $(objects)/.created
+$(objects)/SDL_hidapi_gamecube.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_gamecube.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_syspower.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/power/macosx/SDL_syspower.c $(objects)/.created
+$(objects)/SDL_hidapi_luna.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_luna.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_sysfilesystem.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/filesystem/cocoa/SDL_sysfilesystem.m $(objects)/.created
+$(objects)/SDL_hidapi_ps4.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_ps4.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_systimer.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/timer/unix/SDL_systimer.c $(objects)/.created
+$(objects)/SDL_hidapi_ps5.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_ps5.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_rwopsbundlesupport.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/file/cocoa/SDL_rwopsbundlesupport.m $(objects)/.created
+$(objects)/SDL_hidapi_rumble.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_rumble.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_poll.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/core/unix/SDL_poll.c $(objects)/.created
+$(objects)/SDL_hidapi_stadia.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_stadia.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_virtualjoystick.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/joystick/virtual/SDL_virtualjoystick.c $(objects)/.created
+$(objects)/SDL_hidapi_steam.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_steam.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_dummysensor.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/sensor/dummy/SDL_dummysensor.c $(objects)/.created
+$(objects)/SDL_hidapi_switch.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_switch.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
+$(objects)/SDL_hidapi_xbox360.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_xbox360.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_hidapi_xbox360w.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_xbox360w.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_hidapi_xboxone.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapi_xboxone.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_hidapijoystick.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/hidapi/SDL_hidapijoystick.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_hidapi.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/hidapi/SDL_hidapi.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_sysurl.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/misc/macosx/SDL_sysurl.m $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_syslocale.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/locale/macosx/SDL_syslocale.m $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_coreaudio.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/audio/coreaudio/SDL_coreaudio.m $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_iokitjoystick.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/darwin/SDL_iokitjoystick.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_mfijoystick.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/iphoneos/SDL_mfijoystick.m $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_syshaptic.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/haptic/darwin/SDL_syshaptic.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_syspower.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/power/macosx/SDL_syspower.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_sysfilesystem.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/filesystem/cocoa/SDL_sysfilesystem.m $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_systimer.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/timer/unix/SDL_systimer.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_rwopsbundlesupport.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/file/cocoa/SDL_rwopsbundlesupport.m $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_poll.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/core/unix/SDL_poll.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_virtualjoystick.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/joystick/virtual/SDL_virtualjoystick.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_dummysensor.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/sensor/dummy/SDL_dummysensor.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
 
-$(objects)/SDL_dummy_main.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/main/dummy/SDL_dummy_main.c $(objects)/.created
+$(objects)/SDL_dummy_main.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/main/dummy/SDL_dummy_main.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-$(objects)/SDL_test_assert.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_assert.c $(objects)/.created
+$(objects)/SDL_test_assert.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_assert.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_common.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_common.c $(objects)/.created
+$(objects)/SDL_test_common.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_common.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_compare.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_compare.c $(objects)/.created
+$(objects)/SDL_test_compare.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_compare.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_crc32.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_crc32.c $(objects)/.created
+$(objects)/SDL_test_crc32.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_crc32.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_font.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_font.c $(objects)/.created
+$(objects)/SDL_test_font.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_font.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_fuzzer.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_fuzzer.c $(objects)/.created
+$(objects)/SDL_test_fuzzer.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_fuzzer.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_harness.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_harness.c $(objects)/.created
+$(objects)/SDL_test_harness.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_harness.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_imageBlit.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_imageBlit.c $(objects)/.created
+$(objects)/SDL_test_imageBlit.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_imageBlit.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_imageBlitBlend.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_imageBlitBlend.c $(objects)/.created
+$(objects)/SDL_test_imageBlitBlend.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_imageBlitBlend.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_imageFace.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_imageFace.c $(objects)/.created
+$(objects)/SDL_test_imageFace.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_imageFace.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_imagePrimitives.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_imagePrimitives.c $(objects)/.created
+$(objects)/SDL_test_imagePrimitives.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_imagePrimitives.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_imagePrimitivesBlend.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_imagePrimitivesBlend.c $(objects)/.created
+$(objects)/SDL_test_imagePrimitivesBlend.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_imagePrimitivesBlend.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_log.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_log.c $(objects)/.created
+$(objects)/SDL_test_log.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_log.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_md5.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_md5.c $(objects)/.created
+$(objects)/SDL_test_md5.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_md5.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_memory.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_memory.c $(objects)/.created
+$(objects)/SDL_test_memory.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_memory.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@ 
-$(objects)/SDL_test_random.lo: /Users/pitriche/ex/ft_newton/Library/SDL2-2.0.16/src/test/SDL_test_random.c $(objects)/.created
+$(objects)/SDL_test_random.lo: /Users/ydemange/proj/test/Library/SDL2-2.0.16/src/test/SDL_test_random.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
