@@ -26,12 +26,12 @@ void	OpenGL::_init_vao(void)
 	float	obj_data[] =
 	{
 		/* cube */
-		-1,	1,	-1,		1,	1,	-1,		1,	-1,	-1,		-1,	-1,	-1,	/* front */
-		-1,	1,	1,		1,	1,	1,		1,	-1,	1,		-1,	-1,	1,	/* back */
-		-1,	1,	1,		-1,	1,	-1,		-1,	-1,	-1,		-1,	-1,	1,	/* left */
-		1,	1,	1,		1,	1,	-1,		1,	-1,	-1,		1,	-1,	1,	/* right */
-		-1,	-1,	-1,		1,	-1,	-1,		1,	-1,	1,		-1,	-1,	1,	/* bottom */
-		-1,	1,	-1,		1,	1,	-1,		1,	1,	1,		-1,	1,	1,	/* top */
+		-1,	1,	-1,		1,	1,	-1,		1,	-1,	-1,		1,	-1,	-1,		-1,	-1,	-1,		-1,	1,	-1,	/* front */
+		-1,	1,	1,		1,	1,	1,		1,	-1,	1,		-1,	1,	1,		-1,	-1,	1,		1,	-1,	1,	/* back */
+		-1,	1,	1,		-1,	1,	-1,		-1,	-1,	-1,		-1,	1,	1,		-1,	-1,	1,		-1,	-1,	-1,	/* left */
+		1,	1,	1,		1,	1,	-1,		1,	-1,	-1,		1,	1,	1,		1,	-1,	1,		1,	-1,	-1,	/* right */
+		-1,	-1,	-1,		1,	-1,	-1,		1,	-1,	1,		-1,	-1,	-1,		-1,	-1,	1,		1,	-1,	1,	/* bottom */
+		-1,	1,	-1,		1,	1,	-1,		1,	1,	1,		-1,	1,	-1,		-1,	1,	1,		1,	1,	1	/* top */
 	};
 
 	/* bring radius and side length to 1 */
@@ -86,8 +86,8 @@ void	OpenGL::_init_shader(void)
 {
 	this->shader.vertex = compile_shader("shader/vertex.glsl",
 		GL_VERTEX_SHADER);
-	// this->shader.geometry = compile_shader("shader/geometry.glsl",
-	// 	GL_GEOMETRY_SHADER);
+	this->shader.geometry = compile_shader("shader/geometry.glsl",
+		GL_GEOMETRY_SHADER);
 	this->shader.fragment = compile_shader("shader/fragment.glsl",
 		GL_FRAGMENT_SHADER);
 
@@ -95,7 +95,7 @@ void	OpenGL::_init_shader(void)
 	this->shader.program = glCreateProgram();
 	std::cout << "Program: [" << this->shader.program << "/3]" << std::endl;
 	glAttachShader(this->shader.program, this->shader.vertex);
-	// glAttachShader(this->shader.program, this->shader.geometry); // geometry
+	glAttachShader(this->shader.program, this->shader.geometry); // geometry
 	glAttachShader(this->shader.program, this->shader.fragment);
 	glBindFragDataLocation(this->shader.program, 0, "outColor");
 

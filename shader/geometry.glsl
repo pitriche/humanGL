@@ -3,11 +3,14 @@
 layout(triangles) in;
 layout(triangle_strip, max_vertices = 3) out;
 
+in vec3		pos_vertex[];
 in vec3		color_vertex[];
-in vec3		cam_pos_vertex[];
+
 out vec3	color_geometry;
 
 uniform vec3	camera_pos;
+
+/* ########################################################################## */
 
 vec3	normal(vec3 p1, vec3 p2, vec3 p3)
 {
@@ -23,27 +26,24 @@ void	main()
 {
 	vec3	normal_vec;
 	float	mult;
-
-	normal_vec = normal(cam_pos_vertex[0], cam_pos_vertex[1],
-		cam_pos_vertex[2]);
-
-	mult = abs(dot(normal_vec, cam_pos_vertex[0]));
+	vec3	color;
+	
+	normal_vec = normal(pos_vertex[0], pos_vertex[1], pos_vertex[2]);
+	mult = abs(dot(normal_vec, vec3(0, 0, 1)));
+	color = color_vertex[0] * ((mult + 1) / 2);
 
 	gl_Position = gl_in[0].gl_Position;
-	color_geometry = color_vertex[0];
+	color_geometry = color;
 	EmitVertex();
 
 	gl_Position = gl_in[1].gl_Position;
-	color_geometry = color_vertex[1];
+	color_geometry = color;
 	EmitVertex();
 
 	gl_Position = gl_in[2].gl_Position;
-	color_geometry = color_vertex[2];
+	color_geometry = color;
 	EmitVertex();
 
-	// gl_Position = gl_in[3].gl_Position;
-	// color_geometry = color_vertex[3];
-	// EmitVertex();
 
 	EndPrimitive();
 }

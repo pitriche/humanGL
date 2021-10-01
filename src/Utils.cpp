@@ -6,7 +6,7 @@
 /*   By: pitriche <pitriche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 11:14:54 by pitriche          #+#    #+#             */
-/*   Updated: 2021/09/28 16:39:17 by pitriche         ###   ########.fr       */
+/*   Updated: 2021/10/01 14:21:40 by pitriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,25 @@ namespace Utils
 	{
 		glUniformMatrix4fv(all.gl.uniform.matrix_model, 1, true, model.data());
 		glUniform1i(all.gl.uniform.color, 0x8080ff);
-		glDrawArrays(GL_TRIANGLE_FAN, 0, 4);	/* front */
-		glDrawArrays(GL_TRIANGLE_FAN, 4, 4);	/* back */
+		glDrawArrays(GL_TRIANGLES, 0, 3);	/* front */
+		glDrawArrays(GL_TRIANGLES, 3, 3);	/* front */
+		glDrawArrays(GL_TRIANGLES, 6, 3);	/* back */
+		glDrawArrays(GL_TRIANGLES, 9, 3);	/* back */
 		glUniform1i(all.gl.uniform.color, 0xff8080);
-		glDrawArrays(GL_TRIANGLE_FAN, 8, 4);	/* left */
-		glDrawArrays(GL_TRIANGLE_FAN, 12, 4);	/* right */
+
+		glDrawArrays(GL_TRIANGLES, 12, 3);	/* left */
+		glDrawArrays(GL_TRIANGLES, 15, 3);	/* left */
+		glDrawArrays(GL_TRIANGLES, 18, 3);	/* right */
+		glDrawArrays(GL_TRIANGLES, 21, 3);	/* right */
 		glUniform1i(all.gl.uniform.color, 0x80ff80);
-		glDrawArrays(GL_TRIANGLE_FAN, 16, 4);	/* bottom */
-		glDrawArrays(GL_TRIANGLE_FAN, 20, 4);	/* top */
+
+
+		glDrawArrays(GL_TRIANGLES, 24, 3);	/* bottom */
+		glDrawArrays(GL_TRIANGLES, 27, 3);	/* bottom */
+		glDrawArrays(GL_TRIANGLES, 30, 3);	/* top */
+		glDrawArrays(GL_TRIANGLES, 33, 3);	/* top */
+		// glDrawArrays(GL_TRIANGLES, 16, 3);	/* bottom */
+		// glDrawArrays(GL_TRIANGLES, 20, 3);	/* top */
 	}
 
 	/* set colors */
